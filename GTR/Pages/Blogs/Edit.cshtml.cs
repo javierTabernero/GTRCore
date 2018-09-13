@@ -3,6 +3,7 @@ using GTR.Pages.Base;
 using GTR.Service.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace GTR.Pages.Blogs
 {
@@ -18,14 +19,14 @@ namespace GTR.Pages.Blogs
         [BindProperty]
         public Blog Blog { get; set; }
 
-        public IActionResult OnGet(int? id)
+        public async Task<IActionResult> OnGetAsync(int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            Blog = _blogService.GetById(id.Value, user);
+            Blog = await _blogService.GetByIdAsync(id.Value, user);
 
             if (Blog == null)
             {
@@ -35,7 +36,7 @@ namespace GTR.Pages.Blogs
             return Page();
         }
 
-        public IActionResult OnPost()
+        public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid)
             {
@@ -44,7 +45,7 @@ namespace GTR.Pages.Blogs
 
             try
             {
-                _blogService.Update(Blog, user);
+                await _blogService.UpdateAsync(Blog, user);
             }
             catch (KeyNotFoundException kex)
             {

@@ -6,6 +6,7 @@ using GTR.Domain.Validations;
 using GTR.Repository.Repositories;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace GTR.Domain.Logic.Services
 {
@@ -27,9 +28,21 @@ namespace GTR.Domain.Logic.Services
             return GetDomainEntitiesFromRepositoryEntities(repositoryPost).ToList();
         }
 
+        public async Task<List<Post>> GetByBlogIdAsync(int blogId, User user)
+        {
+            IEnumerable<Repository.Model.Post> repositoryPost = await _postRepository.GetByBlogIdAsync(blogId, UserToRepositoryEntity(user));
+
+            return GetDomainEntitiesFromRepositoryEntities(repositoryPost).ToList();
+        }
+
         public Post GetById(int id, User user)
         {
            return GetDomainEntityFromRepositoryEntity( _postRepository.GetById(id, UserToRepositoryEntity(user)));
+        }
+
+        public async Task<Post> GetByIdAsync(int id, User user)
+        {
+            return GetDomainEntityFromRepositoryEntity(await _postRepository.GetByIdAsync(id, UserToRepositoryEntity(user)));
         }
     }
 }

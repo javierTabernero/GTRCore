@@ -4,6 +4,7 @@ using GTR.Pages.Base;
 using GTR.Service.Services;
 using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace GTR.Pages.Blogs
 {
@@ -26,15 +27,15 @@ namespace GTR.Pages.Blogs
 
         public int BlogId { get; set; }
 
-        public void OnGet(int ? id)
+        public async Task OnGetAsync(int ? id)
         {
             _logger.LogInformation("Blogs.Index.OnGet");
-            Blogs = _blogService.GetAll();
+            Blogs = await _blogService.GetAllAsync();
 
             if (id != null)
             {
                 BlogId = id.Value;
-                Posts = _postService.GetByBlogId(BlogId, user);
+                Posts = await _postService.GetByBlogIdAsync(BlogId, user);
             }
         }
     }

@@ -3,6 +3,7 @@ using GTR.Pages.Base;
 using GTR.Service.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace GTR.Pages.Posts
 {
@@ -18,14 +19,14 @@ namespace GTR.Pages.Posts
         [BindProperty]
         public Post Post { get; set; }
 
-        public IActionResult OnGet(int? id)
+        public async Task<IActionResult> OnGetAsync(int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            Post = _postService.GetById(id.Value, user);
+            Post = await _postService.GetByIdAsync(id.Value, user);
 
             if (Post == null)
             {
@@ -35,7 +36,7 @@ namespace GTR.Pages.Posts
             return Page();
         }
 
-        public IActionResult OnPost()
+        public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid)
             {
@@ -44,7 +45,7 @@ namespace GTR.Pages.Posts
 
             try
             {
-                _postService.Update(Post, user);
+                await _postService.UpdateAsync(Post, user);
             }
             catch (KeyNotFoundException kex)
             {

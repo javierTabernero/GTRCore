@@ -6,6 +6,7 @@ using GTR.Domain.Validations;
 using GTR.Repository.Repositories.Base;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace GTR.Domain.Logic.Services.Base
 {
@@ -56,6 +57,40 @@ namespace GTR.Domain.Logic.Services.Base
             ThrowExceptionIfDeletionIsNotPosible(entityId, usuario);
 
             _baseRepositoryCrud.Delete(_baseRepositoryCrud.GetById(entityId));
+        }
+
+        public async virtual Task<TDomainEntity> AddAsync(TDomainEntity entity, User usuario)
+        {
+            TRepositoryEntity entityRepository = GetValidRepositoryEntityFormDomainEntity(entity, true, usuario);
+            SpecificEntityAddOperations(entityRepository, entity);
+            await _baseRepositoryCrud.AddAsync(entityRepository);
+
+            return GetDomainEntityFromRepositoryEntity(entityRepository);
+        }
+
+        public async virtual Task<TDomainEntity> AddAsync(TDomainEntity entity, bool validate, User usuario)
+        {
+            TRepositoryEntity entityRepository = GetValidRepositoryEntityFormDomainEntity(entity, validate, usuario);
+            SpecificEntityAddOperations(entityRepository, entity);
+            await _baseRepositoryCrud.AddAsync(entityRepository);
+
+            return GetDomainEntityFromRepositoryEntity(entityRepository);
+        }
+
+        public async virtual Task UpdateAsync(TDomainEntity entity, User usuario)
+        {
+            TRepositoryEntity entityRepository = GetValidRepositoryEntityFormDomainEntity(entity, true, usuario);
+            SpecificEntityUpdateOperations(entityRepository, entity);
+            await _baseRepositoryCrud.UpdateAsync(entityRepository);
+
+            entity = GetDomainEntityFromRepositoryEntity(entityRepository);
+        }
+
+        public async virtual Task DeleteAsync(int entityId, User usuario)
+        {
+            ThrowExceptionIfDeletionIsNotPosible(entityId, usuario);
+
+            await _baseRepositoryCrud.DeleteAsync(_baseRepositoryCrud.GetById(entityId));
         }
 
         public virtual void Validate(TDomainEntity entity, User usuario)

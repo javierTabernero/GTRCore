@@ -2,6 +2,7 @@
 using GTR.Pages.Base;
 using GTR.Service.Services;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace GTR.Pages.Blogs
 {
@@ -16,15 +17,14 @@ namespace GTR.Pages.Blogs
 
         public Blog Blog { get; set; }
 
-       // public async Task<IActionResult> OnGetAsync(int? id)
-        public IActionResult OnGet(int? id)
+        public async Task<IActionResult> OnGetAsync(int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            Blog = _blogService.GetById(id.Value, user);
+            Blog = await _blogService.GetByIdAsync(id.Value, user);
 
             if (Blog == null)
             {

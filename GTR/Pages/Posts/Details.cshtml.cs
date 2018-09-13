@@ -2,6 +2,7 @@
 using GTR.Pages.Base;
 using GTR.Service.Services;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace GTR.Pages.Posts
 {
@@ -16,14 +17,14 @@ namespace GTR.Pages.Posts
 
         public Post Post { get; set; }
 
-        public IActionResult OnGet(int? id)
+        public async Task<IActionResult> OnGetAsync(int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            Post = _postService.GetById(id.Value, base.user);
+            Post = await _postService.GetByIdAsync(id.Value, base.user);
 
             if (Post == null)
             {

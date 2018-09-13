@@ -2,6 +2,7 @@
 using GTR.Pages.Base;
 using GTR.Service.Services;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace GTR.Pages.Blogs
 {
@@ -22,14 +23,14 @@ namespace GTR.Pages.Blogs
         [BindProperty]
         public Blog Blog { get; set; }
 
-        public IActionResult OnPost()
+        public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid)
             {
                 return Page();
             }
 
-            _blogService.Add(Blog, user);
+            await _blogService.AddAsync(Blog, user);
 
             return RedirectToPage("./Index");
         }
