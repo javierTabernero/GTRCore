@@ -1,0 +1,25 @@
+﻿@page "{id:int}"
+@model GTR.Pages.Posts.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>@GTR.Resources.Resources.Resources.Details</h2>
+
+<div>
+    <h4>@GTR.Resources.Resources.Resources.Post</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>@GTR.Resources.Resources.Resources.Post_Title</dt>
+        <dd>@Html.DisplayFor(model => model.Post.Title)</dd>
+        <dt>@GTR.Resources.Resources.Resources.PostContent</dt>
+        <dd>@Html.DisplayFor(model => model.Post.Content)</dd>
+        <dt>@GTR.Resources.Resources.Resources.BlogUrl</dt>
+        <dd>@Html.DisplayFor(model => model.Post.Blog.Url)</dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Post.PostId">@GTR.Resources.Resources.Resources.Edit</a> |
+    <a asp-page="/Blogs/Index" asp-route-id="@Model.Post.BlogId">@GTR.Resources.Resources.Resources.BackToBlogList</a>
+</div>

@@ -1,0 +1,67 @@
+﻿@page "{id:int?}"
+@model GTR.Pages.Blogs.IndexModel
+
+@{
+    ViewData["Title"] = @GTR.Resources.Resources.Resources.Index;
+}
+
+<h2>@GTR.Resources.Resources.Resources.Index</h2>
+
+<p>
+    <a asp-page="Create">@GTR.Resources.Resources.Resources.CreateNewBlog</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>@GTR.Resources.Resources.Resources.BlogUrl</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Blogs)
+        {
+            string selectedRow = string.Empty;
+            if (item.BlogId == Model.BlogId)
+            {
+                selectedRow = "success";
+            }
+            <tr class="@selectedRow">
+                <td>
+                    @Html.DisplayFor(modelItem => item.Url)
+                </td>
+                <td>
+                    <a asp-page="./Index" asp-route-id="@item.BlogId">@GTR.Resources.Resources.Resources.Select</a> |
+                    <a asp-page="./Edit" asp-route-id="@item.BlogId">@GTR.Resources.Resources.Resources.Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.BlogId">@GTR.Resources.Resources.Resources.Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.BlogId">@GTR.Resources.Resources.Resources.Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@if (Model.Posts != null)
+{
+    <h3>@GTR.Resources.Resources.Resources.PostTitle</h3>
+    <p><a asp-page="/Posts/Create" asp-route-id="@Model.BlogId">@GTR.Resources.Resources.Resources.CreateNewPost</a></p>
+    <table class="table">
+        <tr>
+            <th>@GTR.Resources.Resources.Resources.Post_Title</th>
+            <th>@GTR.Resources.Resources.Resources.PostContent</th>
+        </tr>
+
+        @foreach (var item in Model.Posts)
+        {
+            <tr>
+                <td>@item.Title</td>
+                <td>@item.Content</td>
+                <td>
+                    <a asp-page="/Posts/Edit" asp-route-id="@item.PostId">@GTR.Resources.Resources.Resources.Edit</a> |
+                    <a asp-page="/Posts/Details" asp-route-id="@item.PostId">@GTR.Resources.Resources.Resources.Details</a> |
+                    <a asp-page="/Posts/Delete" asp-route-id="@item.PostId">@GTR.Resources.Resources.Resources.Delete</a>
+                </td>
+            </tr>
+        }
+
+    </table>
+}

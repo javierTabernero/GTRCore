@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GTR.CrossCuting\GTR.CrossCutting.csproj" />
+    <ProjectReference Include="..\GTR.Domain.Logic\GTR.Domain.Logic.csproj" />
+    <ProjectReference Include="..\GTR.Domain.Model\GTR.Domain.Model.csproj" />
+    <ProjectReference Include="..\GTR.Domain\GTR.Domain.csproj" />
+    <ProjectReference Include="..\GTR.Resources\GTR.Resources.csproj" />
+    <ProjectReference Include="..\GTR.Service\GTR.Service.csproj" />
+  </ItemGroup>
+
+</Project>

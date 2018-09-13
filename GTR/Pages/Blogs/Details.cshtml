@@ -1,0 +1,21 @@
+﻿@page
+@model GTR.Pages.Blogs.DetailsModel
+
+@{
+    ViewData["Title"] = @GTR.Resources.Resources.Resources.Details;
+}
+
+<h2>@GTR.Resources.Resources.Resources.Details</h2>
+
+<div>
+    <h4>@GTR.Resources.Resources.Resources.Blog</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>@GTR.Resources.Resources.Resources.BlogUrl</dt>
+        <dd>@Html.DisplayFor(model => model.Blog.Url)</dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Blog.BlogId">@GTR.Resources.Resources.Resources.Edit</a> |
+    <a asp-page="./Index">@GTR.Resources.Resources.Resources.BackToBlogList</a>
+</div>

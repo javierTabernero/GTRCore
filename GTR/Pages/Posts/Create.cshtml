@@ -1,0 +1,41 @@
+﻿@page "{id:int}"
+@model GTR.Pages.Posts.CreateModel
+
+@{
+    ViewData["Title"] = @GTR.Resources.Resources.Resources.CreateNewPost;
+}
+
+<h2>@GTR.Resources.Resources.Resources.Create</h2>
+
+<h4>@GTR.Resources.Resources.Resources.Post</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Post.BlogId" class="form-control" />
+            
+            <div class="form-group">
+                <label asp-for="Post.Title" class="control-label">@GTR.Resources.Resources.Resources.Post_Title</label>
+                <input asp-for="Post.Title" class="form-control" />
+                <span asp-validation-for="Post.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Post.Content" class="control-label">@GTR.Resources.Resources.Resources.PostContent</label>
+                <input asp-for="Post.Content" class="form-control" />
+                <span asp-validation-for="Post.Content" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="@GTR.Resources.Resources.Resources.Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="/Blogs/Index" asp-route-id="@Model.Post.BlogId">@GTR.Resources.Resources.Resources.BackToBlogList</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

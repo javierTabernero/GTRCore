@@ -1,0 +1,38 @@
+13-09-2018 12:02:11.370 +02:00 [Information] Host starting...
+13-09-2018 12:02:18.858 +02:00 [Information] Blogs.Index.OnGet
+13-09-2018 12:02:18.866 +02:00 [Information] BlogService.GetAll
+13-09-2018 12:02:19.146 +02:00 [Warning] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.
+13-09-2018 12:02:32.264 +02:00 [Information] Blogs.Index.OnGet
+13-09-2018 12:02:32.270 +02:00 [Information] BlogService.GetAll
+13-09-2018 12:02:33.658 +02:00 [Information] Blogs.Index.OnGet
+13-09-2018 12:02:33.658 +02:00 [Information] BlogService.GetAll
+13-09-2018 12:07:35.010 +02:00 [Information] Host starting...
+13-09-2018 12:07:40.668 +02:00 [Information] Blogs.Index.OnGet
+13-09-2018 12:07:40.686 +02:00 [Information] BlogService.GetAll
+13-09-2018 12:07:40.990 +02:00 [Warning] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.
+13-09-2018 12:08:22.770 +02:00 [Information] Blogs.Index.OnGet
+13-09-2018 12:08:22.770 +02:00 [Information] BlogService.GetAll
+13-09-2018 13:32:11.788 +02:00 [Information] Host starting...
+13-09-2018 13:37:04.215 +02:00 [Information] Blogs.Index.OnGet
+13-09-2018 13:37:04.224 +02:00 [Information] BlogService.GetAll
+13-09-2018 13:37:04.434 +02:00 [Warning] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.
+13-09-2018 13:37:07.435 +02:00 [Information] Blogs.Index.OnGet
+13-09-2018 13:37:07.435 +02:00 [Information] BlogService.GetAll
+13-09-2018 13:37:19.633 +02:00 [Information] Blogs.Index.OnGet
+13-09-2018 13:37:19.634 +02:00 [Information] BlogService.GetAll
+13-09-2018 13:37:28.561 +02:00 [Information] Blogs.Index.OnGet
+13-09-2018 13:37:28.561 +02:00 [Information] BlogService.GetAll
+13-09-2018 13:37:31.927 +02:00 [Information] Blogs.Index.OnGet
+13-09-2018 13:37:31.927 +02:00 [Information] BlogService.GetAll
+13-09-2018 13:37:37.250 +02:00 [Information] Blogs.Index.OnGet
+13-09-2018 13:37:37.250 +02:00 [Information] BlogService.GetAll
+13-09-2018 13:37:38.057 +02:00 [Information] Blogs.Index.OnGet
+13-09-2018 13:37:38.057 +02:00 [Information] BlogService.GetAll
+13-09-2018 13:37:39.258 +02:00 [Information] Blogs.Index.OnGet
+13-09-2018 13:37:39.258 +02:00 [Information] BlogService.GetAll
+13-09-2018 13:37:39.909 +02:00 [Information] Blogs.Index.OnGet
+13-09-2018 13:37:39.909 +02:00 [Information] BlogService.GetAll
+13-09-2018 13:37:40.793 +02:00 [Information] Blogs.Index.OnGet
+13-09-2018 13:37:40.793 +02:00 [Information] BlogService.GetAll
+13-09-2018 13:37:42.045 +02:00 [Information] Blogs.Index.OnGet
+13-09-2018 13:37:42.046 +02:00 [Information] BlogService.GetAll
