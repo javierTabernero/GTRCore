@@ -2,6 +2,7 @@
 using GTR.Domain.Model.Data;
 using GTR.Pages.Base;
 using GTR.Service.Services;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -37,6 +38,17 @@ namespace GTR.Pages.Blogs
                 BlogId = id.Value;
                 Posts = await _postService.GetByBlogIdAsync(BlogId, user);
             }
+        }
+
+        public JsonResult OnGetList()
+        {
+            List<string> lstString = new List<string>
+            {
+                "Val 1",
+                "Val 2",
+                "Val 3"
+            };
+            return new JsonResult(lstString);
         }
     }
 }

@@ -192,4 +192,10 @@
   <data name="Select" xml:space="preserve">
     <value>x</value>
   </data>
+  <data name="UI_Error" xml:space="preserve">
+    <value>X</value>
+  </data>
+  <data name="UI_NoKey" xml:space="preserve">
+    <value>x</value>
+  </data>
 </root>

@@ -1,4 +1,5 @@
-﻿using GTR.Domain.Model.Data;
+﻿using GTR.CrossCutting.Exceptions;
+using GTR.Domain.Model.Data;
 using GTR.Pages.Base;
 using GTR.Service.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -30,9 +31,17 @@ namespace GTR.Pages.Blogs
                 return Page();
             }
 
-            await _blogService.AddAsync(Blog, user);
+            try
+            {
+                await _blogService.AddAsync(Blog, user);
 
-            return RedirectToPage("./Index");
+                return RedirectToPage("./Index");
+            }
+            catch (ValidationException vex)
+            {
+                SetModelError(vex);
+                return Page();
+            }
         }
     }
 }

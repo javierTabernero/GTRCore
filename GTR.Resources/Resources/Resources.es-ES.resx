@@ -192,4 +192,10 @@
   <data name="Select" xml:space="preserve">
     <value>Selecionar</value>
   </data>
+  <data name="UI_Error" xml:space="preserve">
+    <value>Campo: {0}. Error: {1}</value>
+  </data>
+  <data name="UI_NoKey" xml:space="preserve">
+    <value>No se encuentra el registro para actualizar</value>
+  </data>
 </root>

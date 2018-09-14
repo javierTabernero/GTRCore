@@ -284,5 +284,23 @@ namespace GTR.Resources.Resources {
                 return ResourceManager.GetString("Select", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to X.
+        /// </summary>
+        public static string UI_Error {
+            get {
+                return ResourceManager.GetString("UI_Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to x.
+        /// </summary>
+        public static string UI_NoKey {
+            get {
+                return ResourceManager.GetString("UI_NoKey", resourceCulture);
+            }
+        }
     }
 }

@@ -15,6 +15,7 @@ namespace GTR.Pages.Blogs
         {
             _blogService = blogService;
         }
+
         [BindProperty]
         public Blog Blog { get; set; }
 
@@ -35,7 +36,6 @@ namespace GTR.Pages.Blogs
             return Page();
         }
 
-
         public async Task<IActionResult> OnPostAsync(int? id)
         {
             if (id == null)
@@ -49,7 +49,8 @@ namespace GTR.Pages.Blogs
             }
             catch(KeyNotFoundException kex)
             {
-                return NotFound();
+                SetKeyNotFoundModelError();
+                return Page();
             }
 
             return RedirectToPage("./Index");

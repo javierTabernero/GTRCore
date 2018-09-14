@@ -49,7 +49,8 @@ namespace GTR.Pages.Posts
             }
             catch (KeyNotFoundException kex)
             {
-                return NotFound();
+                SetKeyNotFoundModelError();
+                return Page();
             }
 
             return RedirectToPage("/Blogs/Index", new { Id = Post.BlogId });

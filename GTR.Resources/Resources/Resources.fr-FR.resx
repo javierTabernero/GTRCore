@@ -118,78 +118,84 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="BackToBlogList" xml:space="preserve">
-    <value>Volver al listado de blogs gabacho</value>
+    <value>Volver al listado de blogs Frances</value>
   </data>
   <data name="Blog" xml:space="preserve">
-    <value>Blog gabacho</value>
+    <value>Blog Frances</value>
   </data>
   <data name="BlogUrl" xml:space="preserve">
-    <value>URL gabacho</value>
+    <value>URL Frances</value>
   </data>
   <data name="Create" xml:space="preserve">
-    <value>Crear gabacho</value>
+    <value>Crear Frances</value>
   </data>
   <data name="CreateNewBlog" xml:space="preserve">
-    <value>Crear nuevo Blog gabacho</value>
+    <value>Crear nuevo Blog Frances</value>
   </data>
   <data name="CreateNewPost" xml:space="preserve">
-    <value>Crear nuevo post gabacho</value>
+    <value>Crear nuevo post Frances</value>
   </data>
   <data name="Delete" xml:space="preserve">
-    <value>Borrar gabacho</value>
+    <value>Borrar Frances</value>
   </data>
   <data name="DeleteSure" xml:space="preserve">
-    <value>Estas seguro que quieres borrar esto? gabacho</value>
+    <value>Estas seguro que quieres borrar esto? Frances</value>
   </data>
   <data name="Details" xml:space="preserve">
-    <value>Detalle gabacho</value>
+    <value>Detalle Frances</value>
   </data>
   <data name="Edit" xml:space="preserve">
-    <value>Editar gabacho</value>
+    <value>Editar Frances</value>
   </data>
   <data name="Index" xml:space="preserve">
-    <value>Indice gabacho</value>
+    <value>Indice Frances</value>
   </data>
   <data name="InvalidBetweenDates" xml:space="preserve">
-    <value>La fecha fin no puede ser inferior a la fecha de inicio gabacho</value>
+    <value>La fecha fin no puede ser inferior a la fecha de inicio Frances</value>
   </data>
   <data name="InvalidDataType" xml:space="preserve">
-    <value>Tipo de dato incorrecto gabacho</value>
+    <value>Tipo de dato incorrecto Frances</value>
   </data>
   <data name="InvalidEmptyField" xml:space="preserve">
-    <value>Campo vacío gabacho</value>
+    <value>Campo vacío Frances</value>
   </data>
   <data name="InvalidFixedLengthField" xml:space="preserve">
-    <value>El filtro ha de contener {0} caracteres gabacho</value>
+    <value>El filtro ha de contener {0} caracteres Frances</value>
   </data>
   <data name="InvalidLengthField" xml:space="preserve">
-    <value>La longitud del campo no es correcta gabacho</value>
+    <value>La longitud del campo no es correcta Frances</value>
   </data>
   <data name="InvalidLengthFieldWidthMax" xml:space="preserve">
-    <value>La longitud del campo no es correcta (Maximo {0} caracteres) gabacho</value>
+    <value>La longitud del campo no es correcta (Maximo {0} caracteres) Frances</value>
   </data>
   <data name="InvalidNotExist" xml:space="preserve">
-    <value>No se ha seleccionado ningún valor o el valor seleccionado no es válido. gabacho</value>
+    <value>No se ha seleccionado ningún valor o el valor seleccionado no es válido. Frances</value>
   </data>
   <data name="InvalidValueTime" xml:space="preserve">
-    <value>El formato de la hora es incorrecto gabacho</value>
+    <value>El formato de la hora es incorrecto Frances</value>
   </data>
   <data name="Post" xml:space="preserve">
-    <value>Post gabacho</value>
+    <value>Post Frances</value>
   </data>
   <data name="PostContent" xml:space="preserve">
-    <value>Contenido gabacho</value>
+    <value>Contenido Frances</value>
   </data>
   <data name="PostTitle" xml:space="preserve">
-    <value>Los post gabacho</value>
+    <value>Los post Frances</value>
   </data>
   <data name="Post_Title" xml:space="preserve">
-    <value>Titulo gabacho</value>
+    <value>Titulo Frances</value>
   </data>
   <data name="Save" xml:space="preserve">
-    <value>Grabar gabacho</value>
+    <value>Grabar Frances</value>
   </data>
   <data name="Select" xml:space="preserve">
-    <value>Selecionar gabacho</value>
+    <value>Selecionar Frances</value>
+  </data>
+  <data name="UI_Error" xml:space="preserve">
+    <value>Campo: {0}. Error: {1} Frances</value>
+  </data>
+  <data name="UI_NoKey" xml:space="preserve">
+    <value>No se encuentra el registro para actualizar Frances</value>
   </data>
 </root>

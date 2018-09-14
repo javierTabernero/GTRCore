@@ -7,6 +7,11 @@ namespace GTR.CrossCutting.Exceptions
     {
         private List<KeyValuePair<string, string>> _errorMessages = new List<KeyValuePair<string, string>>();
 
+        public IEnumerable<KeyValuePair<string, string>> Messages
+        {
+            get { return _errorMessages; }
+        }
+
         public ValidationException() { }
 
         public ValidationException(string source, string message)
@@ -20,11 +25,6 @@ namespace GTR.CrossCutting.Exceptions
         }
 
         public ValidationException(string message, Exception innerException) : base(message, innerException) { }
-
-        public IEnumerable<KeyValuePair<string, string>> Messages
-        {
-            get { return _errorMessages; }
-        }
 
         public void AddMessage(string source, string message)
         {

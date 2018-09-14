@@ -15,7 +15,7 @@ namespace GTR.Domain.Logic.Validations.Base
             _validationMessages.Add(new KeyValuePair<string, string>(sourceFieldName, errorMessage));
         }
 
-        protected bool AddValidationMessageIfInvalidMasterId(string fieldName, int? valueToValidate)
+        protected bool AddValidationMessageIfHasValue(string fieldName, int? valueToValidate)
         {
             bool wereAddedMessages = true;
 
@@ -296,6 +296,14 @@ namespace GTR.Domain.Logic.Validations.Base
             return addedMessages;
         }
 
+        protected void ValidateMandatoryString(string fieldName, string valueToValidate)
+        {
+            if (string.IsNullOrEmpty(valueToValidate) || valueToValidate.Trim().Length == 0)
+            {
+                AddMessageException(fieldName, Resources.Resources.Resources.InvalidEmptyField);
+            }
+        }
+
         protected void ValidateBetweenDates(DatesBetweenToValidate datesBetweenToValidate)
         {
             if (!datesBetweenToValidate.IsAnual)
@@ -333,14 +341,6 @@ namespace GTR.Domain.Logic.Validations.Base
             else if (mesdiff >= datesBetweenToValidate.NumeroMeses)
             {
                 AddMessageException(datesBetweenToValidate.NombreCampo, datesBetweenToValidate.MensajeError);
-            }
-        }
-
-        protected void ValidateMandatoryString(string fieldName, string valueToValidate)
-        {
-            if (string.IsNullOrEmpty(valueToValidate) || valueToValidate.Trim().Length == 0)
-            {
-                AddMessageException(fieldName, Resources.Resources.Resources.InvalidEmptyField);
             }
         }
 

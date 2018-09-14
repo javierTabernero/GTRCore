@@ -19,7 +19,7 @@ namespace GTR.Domain.Logic.Validations
         {
             _validationMessages.Clear();
 
-            ValidateMandatoryString(nameof(repositoryEntityToValidate.Url), repositoryEntityToValidate.Url);
+            AddValidationMessageIfInvalidMandatoryTextAndLength(nameof(repositoryEntityToValidate.Url), repositoryEntityToValidate.Url, 100, 5);
 
             return _validationMessages;
         }

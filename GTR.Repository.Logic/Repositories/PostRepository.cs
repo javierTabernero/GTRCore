@@ -35,12 +35,26 @@ namespace GTR.Repository.Logic.Repositories
 
         protected override Post GetEntityFromRepositoryToUpdate(Post entityToUpdate)
         {
-            return GetDbSet().First(x => x.PostId == entityToUpdate.PostId);
+            Post post = GetDbSet().Where(x => x.PostId == entityToUpdate.PostId).FirstOrDefault();
+
+            if (post == null)
+            {
+                throw new KeyNotFoundException();
+            }
+
+            return post;
         }
 
         protected async override Task<Post> GetEntityFromRepositoryToUpdateAsync(Post entityToUpdate)
         {
-            return await GetDbSet().FirstAsync(x => x.PostId == entityToUpdate.PostId);
+            Post post = await GetDbSet().Where(x => x.PostId == entityToUpdate.PostId).FirstOrDefaultAsync();
+
+            if (post == null)
+            {
+                throw new KeyNotFoundException();
+            }
+
+            return post;
         }
 
         private IQueryable<Post> GetBaseDbSet()

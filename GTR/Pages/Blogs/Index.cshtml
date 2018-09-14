@@ -65,3 +65,34 @@
 
     </table>
 }
+    <div id="dvItems" style="font-size:24px;"></div>
+@Html.AntiForgeryToken()
+@*http://www.talkingdotnet.com/handle-ajax-requests-in-asp-net-core-razor-pages/
+https://github.com/talkingdotnet/ASPNETCoreRazorPageDemoApp/blob/ASPNETCoreRazorAjax/ASPNetRazorPageDemo/Pages/Demo.cshtml.cs*@
+@section Scripts {
+    <script type="text/javascript">
+        //$(document).ready(function () {
+        //    getList();
+        //});
+        
+        function getList() {
+            $.ajax({
+                type: "GET",
+                url: "/Blogs?handler=List",
+                contentType: "application/json",
+                dataType: "json",
+                success: function (response) {
+                    var dvItems = $("#dvItems");
+                    dvItems.empty();
+                    $.each(response, function (i, item) {
+                        $('<li>').append(item).appendTo(dvItems);
+                    });
+                },
+                failure: function (response) {
+                    alert(response);
+                }
+            });
+        }
+
+    </script>
+}

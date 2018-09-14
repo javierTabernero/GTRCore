@@ -3,6 +3,7 @@ using GTR.Repository.Model;
 using GTR.Repository.Model.Data.Users;
 using GTR.Repository.Repositories;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -24,12 +25,26 @@ namespace GTR.Repository.Logic.Repositories
 
         protected override Blog GetEntityFromRepositoryToUpdate(Blog entityToUpdate)
         {
-            return GetDbSet().First(x => x.BlogId == entityToUpdate.BlogId);
+            Blog blog = GetDbSet().Where(x => x.BlogId == entityToUpdate.BlogId).FirstOrDefault();
+
+            if (blog == null)
+            {
+                throw new KeyNotFoundException();
+            }
+
+            return blog;
         }
 
         protected async override Task<Blog> GetEntityFromRepositoryToUpdateAsync(Blog entityToUpdate)
         {
-            return await GetDbSet().FirstAsync(x => x.BlogId == entityToUpdate.BlogId);
+            Blog blog = await GetDbSet().Where(x => x.BlogId == entityToUpdate.BlogId).FirstOrDefaultAsync();
+
+            if (blog == null)
+            {
+                throw new KeyNotFoundException();
+            }
+
+            return blog;
         }
 
         private IQueryable<Blog> GetBaseDbSet()

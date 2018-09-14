@@ -1,4 +1,5 @@
-﻿using GTR.Domain.Model.Data;
+﻿using GTR.CrossCutting.Exceptions;
+using GTR.Domain.Model.Data;
 using GTR.Pages.Base;
 using GTR.Service.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -47,9 +48,15 @@ namespace GTR.Pages.Posts
             {
                 await _postService.UpdateAsync(Post, user);
             }
+            catch (ValidationException vex)
+            {
+                SetModelError(vex);
+                return Page();
+            }
             catch (KeyNotFoundException kex)
             {
-                return NotFound();
+                SetKeyNotFoundModelError();
+                return Page();
             }
 
             return RedirectToPage("/Blogs/Index", new { Id = Post.BlogId });
