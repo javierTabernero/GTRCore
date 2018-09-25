@@ -26,14 +26,14 @@ namespace GTR.Domain.Logic.Services.Base
             return _mapper.Map<TRepository>(domainEntity);
         }
 
-        protected TDomain GetDomainEntityFromRepositoryEntity<TDomain, TRepository>(TRepository repositoryEntity)
-        {
-            return _mapper.Map<TDomain>(repositoryEntity);
-        }
-
         protected TDomainEntity GetDomainEntityFromRepositoryEntity(TRepositoryEntity repositoryEntity)
         {
             return _mapper.Map<TDomainEntity>(repositoryEntity);
+        }
+
+        protected TDomain GetDomainEntityFromRepositoryEntity<TDomain, TRepository>(TRepository repositoryEntity)
+        {
+            return _mapper.Map<TDomain>(repositoryEntity);
         }
 
         protected IEnumerable<TDomainEntity> GetDomainEntitiesFromRepositoryEntities(IEnumerable<TRepositoryEntity> repositoryEntities)

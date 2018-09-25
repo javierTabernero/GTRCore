@@ -1,15 +1,21 @@
 ﻿//using GTR.CrossCutting.Logging;
 using GTR.CrossCutting.Mapping;
 using GTR.Domain.Logic.Services;
+using GTR.Domain.Logic.Services.Account;
 using GTR.Domain.Logic.Validations;
 using GTR.Domain.Services;
+using GTR.Domain.Services.Account;
 using GTR.Domain.Validations;
 using GTR.Repository;
 using GTR.Repository.Logic.Model;
 using GTR.Repository.Logic.Repositories;
+using GTR.Repository.Logic.Repositories.Account;
 using GTR.Repository.Repositories;
+using GTR.Repository.Repositories.Account;
 using GTR.Service.Logic.Services;
+using GTR.Service.Logic.Services.Account;
 using GTR.Service.Services;
+using GTR.Service.Services.Account;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
@@ -63,6 +69,7 @@ namespace GTR.CrossCutting.DependencyInjection
             // Solution.Application.Applications
             Services.AddScoped<IBlogService, BlogService>();
             Services.AddScoped<IPostService, PostService>();
+            services.AddScoped<IUserService, UserService>();
             
             //// Solution.CrossCutting
             //Services.AddScoped<ILogger, Logger>();
@@ -71,6 +78,7 @@ namespace GTR.CrossCutting.DependencyInjection
             //// Solution.Domain.Domains
             services.AddScoped<IBlogLogic, BlogLogic>();
             services.AddScoped<IPostLogic, PostLogic>();
+            services.AddScoped<IUserLogic, UserLogic>();
 
             services.AddScoped<IBlogValidator, BlogValidator>();
             services.AddScoped<IPostValidator, PostValidator>();
@@ -79,6 +87,7 @@ namespace GTR.CrossCutting.DependencyInjection
             services.AddScoped<IUnitOfWork, GtrEntities>();
             services.AddScoped<IBlogRepository, BlogRepository>();
             services.AddScoped<IPostRepository, PostRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
 
             return Services;
         }

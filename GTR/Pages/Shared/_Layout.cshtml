@@ -30,22 +30,35 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-page="/Index">Home</a></li>
-                    <li><a asp-page="/Blogs/Index">Blogs</a></li>
-                    <li><a asp-page="/About">About</a></li>
-                    <li><a asp-page="/Contact">Contact</a></li>
+                    
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li><a asp-page="/Blogs/Index">Blogs</a></li>
+                        <li><a asp-page="/Account/Logout">@GTR.Resources.Resources.Resources.UI_Logout</a></li>
+                    }
+                    else
+                    {
+                        <li><a asp-page="/Account/login">@GTR.Resources.Resources.Resources.UI_Login</a></li>
+                        <li><a asp-page="/Account/Register">@GTR.Resources.Resources.Resources.UI_Register</a></li>
+                    }
                 </ul>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a>@GTR.Resources.Resources.Resources.UI_Hello @User.Identity.Name!</a>
+                        </li>
+                    </ul>
+                }
             </div>
         </div>
     </nav>
-
-    <partial name="_CookieConsentPartial" />
 
     <div class="container body-content">
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; 2018 - GTR</p>
+            <p>&copy; @DateTime.Now.Year - GTR</p>
         </footer>
     </div>
 

@@ -61,7 +61,7 @@ namespace GTR.Resources.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to X.
+        ///   Looks up a localized string similar to x.
         /// </summary>
         public static string BackToBlogList {
             get {
@@ -79,7 +79,7 @@ namespace GTR.Resources.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to X.
+        ///   Looks up a localized string similar to x.
         /// </summary>
         public static string BlogUrl {
             get {
@@ -97,7 +97,7 @@ namespace GTR.Resources.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to X.
+        ///   Looks up a localized string similar to x.
         /// </summary>
         public static string CreateNewBlog {
             get {
@@ -286,7 +286,25 @@ namespace GTR.Resources.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to X.
+        ///   Looks up a localized string similar to x.
+        /// </summary>
+        public static string UI_ConfirmPassword {
+            get {
+                return ResourceManager.GetString("UI_ConfirmPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to x.
+        /// </summary>
+        public static string UI_Email {
+            get {
+                return ResourceManager.GetString("UI_Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to x.
         /// </summary>
         public static string UI_Error {
             get {
@@ -297,9 +315,90 @@ namespace GTR.Resources.Resources {
         /// <summary>
         ///   Looks up a localized string similar to x.
         /// </summary>
+        public static string UI_Hello {
+            get {
+                return ResourceManager.GetString("UI_Hello", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to x.
+        /// </summary>
+        public static string UI_Login {
+            get {
+                return ResourceManager.GetString("UI_Login", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to x.
+        /// </summary>
+        public static string UI_Logout {
+            get {
+                return ResourceManager.GetString("UI_Logout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to x.
+        /// </summary>
+        public static string UI_Name {
+            get {
+                return ResourceManager.GetString("UI_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to x.
+        /// </summary>
         public static string UI_NoKey {
             get {
                 return ResourceManager.GetString("UI_NoKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to x.
+        /// </summary>
+        public static string UI_Password {
+            get {
+                return ResourceManager.GetString("UI_Password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to x.
+        /// </summary>
+        public static string UI_Register {
+            get {
+                return ResourceManager.GetString("UI_Register", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to x.
+        /// </summary>
+        public static string UI_Rol {
+            get {
+                return ResourceManager.GetString("UI_Rol", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to x.
+        /// </summary>
+        public static string UI_Role {
+            get {
+                return ResourceManager.GetString("UI_Role", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to x.
+        /// </summary>
+        public static string UI_Val {
+            get {
+                return ResourceManager.GetString("UI_Val", resourceCulture);
             }
         }
     }

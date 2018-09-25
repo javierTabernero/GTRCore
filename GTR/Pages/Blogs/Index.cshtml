@@ -65,17 +65,24 @@
 
     </table>
 }
-    <div id="dvItems" style="font-size:24px;"></div>
+<div id="dvItems" style="font-size:24px;"></div>
+<div id="grid"></div> @*https://www.mikesdotnetting.com/Article/325/partials-and-ajax-in-razor-pages*@
+
 @Html.AntiForgeryToken()
 @*http://www.talkingdotnet.com/handle-ajax-requests-in-asp-net-core-razor-pages/
 https://github.com/talkingdotnet/ASPNETCoreRazorPageDemoApp/blob/ASPNETCoreRazorAjax/ASPNetRazorPageDemo/Pages/Demo.cshtml.cs*@
 @section Scripts {
     <script type="text/javascript">
-        //$(document).ready(function () {
-        //    getList();
-        //});
-        
-        function getList() {
+        $(document).ready(function () {
+            getAjaxList();
+            //getPartial();
+        });
+
+        function getPartial() {
+            $('#grid').load('/Blogs?handler=DivItemPartial');
+        }
+
+        function getAjaxList() {
             $.ajax({
                 type: "GET",
                 url: "/Blogs?handler=List",

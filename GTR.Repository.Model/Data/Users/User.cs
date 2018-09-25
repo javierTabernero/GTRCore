@@ -1,13 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using GTR.CrossCutting.Enums;
+using System;
+using System.Globalization;
 
 namespace GTR.Repository.Model.Data.Users
 {
     public class User
     {
-        public string UserCode { get; set; }
-        public string Franquicia { get; set; }
-        public byte IdIdioma { get; set; }
+        public Guid Id { get; }
+
+        public string Name { get; set; }
+
+        public string Email { get; }
+
+        public string Password { get; set; }
+
+        public Role Role { get; }
+
+        public string Country { get; set; }
+
+        public User(string name, string email, string password, Role role, string country)
+        {
+            Id = Guid.NewGuid();
+            Name = name;
+            Email = email.ToLowerInvariant();
+            Password = password;
+            Role = role;
+            Country = country;
+        }
     }
 }

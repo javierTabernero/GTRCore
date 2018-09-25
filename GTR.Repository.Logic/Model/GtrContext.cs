@@ -45,22 +45,4 @@ namespace GTR.Repository.Logic.Model
             });
         }
     }
-
-    /// <summary>
-    /// A factory to create an instance of the StudentsContext 
-    /// </summary>
-    //public static class GtrEntitiesFactory
-    //{
-    //    public static GtrEntities Create(string connectionString)
-    //    {
-    //        var optionsBuilder = new DbContextOptionsBuilder<GtrEntities>();
-    //        optionsBuilder.UseSqlServer(connectionString);
-
-    //        // Ensure that the SQLite database and sechema is created!
-    //        GtrEntities context = new GtrEntities(optionsBuilder.Options);
-    //        //context.Database.EnsureCreated();
-
-    //        return context;
-    //    }
-    //}
 }

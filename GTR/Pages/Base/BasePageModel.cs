@@ -1,5 +1,7 @@
-﻿using GTR.CrossCutting.Exceptions;
+﻿using GTR.CrossCutting.DependencyInjection;
+using GTR.CrossCutting.Exceptions;
 using GTR.Domain.Model.Data;
+using GTR.Identity;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Collections.Generic;
 
@@ -11,12 +13,8 @@ namespace GTR.Pages.Base
 
         public BasePageModel()
         {
-            user = new User()
-            {
-                Franquicia = "00626",
-                UserCode = "00001",
-                IdIdioma = 1
-            };
+            IUserIdentity userIdentity = DependencyInjector.GetService<IUserIdentity>();
+            user = userIdentity.GetActiveUser();
         }
 
         public void SetModelError(ValidationException vex)
@@ -29,7 +27,7 @@ namespace GTR.Pages.Base
 
         public void SetKeyNotFoundModelError()
         {
-            ModelState.AddModelError(string.Empty, GTR.Resources.Resources.Resources.UI_NoKey);
+            ModelState.AddModelError(string.Empty, Resources.Resources.Resources.UI_NoKey);
         }
     }
 }

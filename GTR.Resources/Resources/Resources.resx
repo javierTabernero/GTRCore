@@ -118,19 +118,19 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="BackToBlogList" xml:space="preserve">
-    <value>X</value>
+    <value>x</value>
   </data>
   <data name="Blog" xml:space="preserve">
     <value>x</value>
   </data>
   <data name="BlogUrl" xml:space="preserve">
-    <value>X</value>
+    <value>x</value>
   </data>
   <data name="Create" xml:space="preserve">
     <value>x</value>
   </data>
   <data name="CreateNewBlog" xml:space="preserve">
-    <value>X</value>
+    <value>x</value>
   </data>
   <data name="CreateNewPost" xml:space="preserve">
     <value>x</value>
@@ -192,10 +192,43 @@
   <data name="Select" xml:space="preserve">
     <value>x</value>
   </data>
+  <data name="UI_ConfirmPassword" xml:space="preserve">
+    <value>x</value>
+  </data>
+  <data name="UI_Email" xml:space="preserve">
+    <value>x</value>
+  </data>
   <data name="UI_Error" xml:space="preserve">
-    <value>X</value>
+    <value>x</value>
+  </data>
+  <data name="UI_Hello" xml:space="preserve">
+    <value>x</value>
+  </data>
+  <data name="UI_Login" xml:space="preserve">
+    <value>x</value>
+  </data>
+  <data name="UI_Logout" xml:space="preserve">
+    <value>x</value>
+  </data>
+  <data name="UI_Name" xml:space="preserve">
+    <value>x</value>
   </data>
   <data name="UI_NoKey" xml:space="preserve">
+    <value>x</value>
+  </data>
+  <data name="UI_Password" xml:space="preserve">
+    <value>x</value>
+  </data>
+  <data name="UI_Register" xml:space="preserve">
+    <value>x</value>
+  </data>
+  <data name="UI_Rol" xml:space="preserve">
+    <value>x</value>
+  </data>
+  <data name="UI_Role" xml:space="preserve">
+    <value>x</value>
+  </data>
+  <data name="UI_Val" xml:space="preserve">
     <value>x</value>
   </data>
 </root>
