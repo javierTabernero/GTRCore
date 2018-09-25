@@ -33,12 +33,12 @@ namespace GTR.Domain.Logic.Services.Account
 
             if (user == null)
             {
-                throw new Exception($"User '{email}' was not found.");
+                throw new Exception(string.Format(Resources.Resources.Resources.UserEmailWasNotFound, email));
             }
 
             if (user.Password != password)
             {
-                throw new Exception("Invalid password.");
+                throw new Exception(Resources.Resources.Resources.InvalidPassword);
             }
         }
 
@@ -48,7 +48,7 @@ namespace GTR.Domain.Logic.Services.Account
 
             if (user != null)
             {
-                throw new Exception($"User '{email}' already exists.");
+                throw new Exception(string.Format(Resources.Resources.Resources.UserEmailAlreadyExist, email));
             }
 
             Role userRole = (Role)Enum.Parse(typeof(Role), role.ToString(), true);

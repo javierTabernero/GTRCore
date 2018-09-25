@@ -105,9 +105,6 @@ namespace GTR
                 app.UseCookiePolicy();
             }
 
-            //IOptions<RequestLocalizationOptions> options = app.ApplicationServices.GetService<IOptions<RequestLocalizationOptions>>();
-            //app.UseRequestLocalization(options.Value);
-
             app.UseRequestLocalization(new RequestLocalizationOptions
             {
                 DefaultRequestCulture = new RequestCulture(defaultCulture),

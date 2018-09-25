@@ -171,6 +171,9 @@
   <data name="InvalidNotExist" xml:space="preserve">
     <value>No se ha seleccionado ningún valor o el valor seleccionado no es válido. Frances</value>
   </data>
+  <data name="InvalidPassword" xml:space="preserve">
+    <value>Pasword incorrecto Frances.</value>
+  </data>
   <data name="InvalidValueTime" xml:space="preserve">
     <value>El formato de la hora es incorrecto Frances</value>
   </data>
@@ -230,5 +233,11 @@
   </data>
   <data name="UI_Val" xml:space="preserve">
     <value>Valor Frances</value>
+  </data>
+  <data name="UserEmailAlreadyExist" xml:space="preserve">
+    <value>El usuario '{0}' ya existe Frances.</value>
+  </data>
+  <data name="UserEmailWasNotFound" xml:space="preserve">
+    <value>El Usuario '{0}' no ha sido encontrado Frances.</value>
   </data>
 </root>

@@ -171,6 +171,9 @@
   <data name="InvalidNotExist" xml:space="preserve">
     <value>x</value>
   </data>
+  <data name="InvalidPassword" xml:space="preserve">
+    <value>x</value>
+  </data>
   <data name="InvalidValueTime" xml:space="preserve">
     <value>x</value>
   </data>
@@ -229,6 +232,12 @@
     <value>x</value>
   </data>
   <data name="UI_Val" xml:space="preserve">
+    <value>x</value>
+  </data>
+  <data name="UserEmailAlreadyExist" xml:space="preserve">
+    <value>x</value>
+  </data>
+  <data name="UserEmailWasNotFound" xml:space="preserve">
     <value>x</value>
   </data>
 </root>

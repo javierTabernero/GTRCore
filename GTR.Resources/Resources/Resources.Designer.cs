@@ -225,6 +225,15 @@ namespace GTR.Resources.Resources {
         /// <summary>
         ///   Looks up a localized string similar to x.
         /// </summary>
+        public static string InvalidPassword {
+            get {
+                return ResourceManager.GetString("InvalidPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to x.
+        /// </summary>
         public static string InvalidValueTime {
             get {
                 return ResourceManager.GetString("InvalidValueTime", resourceCulture);
@@ -399,6 +408,24 @@ namespace GTR.Resources.Resources {
         public static string UI_Val {
             get {
                 return ResourceManager.GetString("UI_Val", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to x.
+        /// </summary>
+        public static string UserEmailAlreadyExist {
+            get {
+                return ResourceManager.GetString("UserEmailAlreadyExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to x.
+        /// </summary>
+        public static string UserEmailWasNotFound {
+            get {
+                return ResourceManager.GetString("UserEmailWasNotFound", resourceCulture);
             }
         }
     }

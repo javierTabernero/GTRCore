@@ -2,8 +2,6 @@
 using GTR.Domain.Model.Data;
 using GTR.Domain.Services.Account;
 using GTR.Service.Services.Account;
-using System;
-using System.Globalization;
 
 namespace GTR.Service.Logic.Services.Account
 {
@@ -18,9 +16,7 @@ namespace GTR.Service.Logic.Services.Account
 
         public User Get(string email)
         {
-            User user = _userLogic.Get(email);
-
-            return user;
+            return _userLogic.Get(email);
         }
 
         public void Login(string email, string password)
